@@ -43,6 +43,7 @@ public class BasicCustomerVerificationsWithAPIsTest {
         String customerId = "4";
         customerAPI.addItemToCustomerCart(customerId, itemId, quantity);
         Customer jo = customerAPI.getCustomersById(customerId);
-        Assert.assertTrue(jo.getShoppingCart().getItems().length > 0);
+        Assert.assertTrue(jo.getShoppingCart().getItems().length > 0,
+                "Items was not added to cart. Check logs for additional details");
     }
 }

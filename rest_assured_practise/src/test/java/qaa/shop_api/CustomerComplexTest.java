@@ -58,7 +58,7 @@ public class CustomerComplexTest {
     }
 
     private void getEmptyCartForCustomer(String customerId) {
-        when().delete(basePath+separator+customerId+separator+"cart/empty")
+        when().delete(basePath + separator + customerId + separator + "cart/empty")
                 .then().statusCode(200);
     }
 

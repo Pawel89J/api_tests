@@ -31,7 +31,7 @@ public class BasicProductAPIVerificationTest {
     }
 
     @Test
-    public void shouldUpdateProductWithNewPrice() {
+    public void shouldUpdateProductById() {
         Float newPrice = 9.3f;
         HashMap<String,Object> productData = new HashMap<>();
         productData.put("description", "Banana");
@@ -54,7 +54,7 @@ public class BasicProductAPIVerificationTest {
                 .get(BASE_PATH + PRODUCT_PATH)
                 .then()
                 .assertThat()
-                .body("description",hasItems("Peach","Strawberry"));
+                .body("description",hasItems(expectedDescription1,expectedDescription2));
 
     }
 
